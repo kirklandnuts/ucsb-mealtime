@@ -1,9 +1,11 @@
 # UCSB Meal Time
 Determining wait times at UCSB dining halls via computer vision
 
-Next up as of 08/20/18
+Next up as of 08/20/18:
 - automate image collection based on dining hall open hours
 - add stream capability to `get_cams` module
+
+---
 
 
 ## Data 
