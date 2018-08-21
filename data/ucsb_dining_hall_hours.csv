@@ -1,0 +1,14 @@
+dining_hall,case,start,end,desc
+carrillo,weekday,7:15:00 AM,10:00:00 AM,breakfast
+carrillo,weekday,11:00:00 AM,2:30:00 PM,lunch
+carrillo,weekday,5:00:00 PM,8:00:00 PM,dinner
+carrillo,weekend,10:30:00 AM,2:00:00 PM,brunch
+carrillo,weekend,5:00:00 PM,8:00:00 PM,dinner
+de-la-guerra,weekday,11:00:00 AM,2:30:00 PM,lunch
+de-la-guerra,weekday,5:00:00 PM,8:00:00 PM,dinner
+de-la-guerra,weekend,10:30:00 AM,2:00:00 PM,brunch
+de-la-guerra,weekend,5:00:00 PM,8:00:00 PM,dinner
+de-la-guerra,latenite,9:00:00 PM,12:30:00 AM,latenite
+ortega,weekday,7:15:00 AM,10:00:00 AM,breakfast
+ortega,weekday,11:00:00 AM,2:30:00 PM,lunch
+ortega,weekday,5:00:00 PM,8:00:00 PM,dinner
