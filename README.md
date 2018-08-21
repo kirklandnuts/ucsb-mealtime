@@ -15,7 +15,9 @@ DLG:
 Ortega:  
 ![](img/ortega_sample.jpg)
 
-
+## Next up
+- automate image collection based on dining hall open hours
+- add stream capability to `get_cams` module
 
 ## Requirements
 ### Data retrieval module
