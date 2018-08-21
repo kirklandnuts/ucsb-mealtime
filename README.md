@@ -1,6 +1,11 @@
 # UCSB Meal Time
 Determining wait times at UCSB dining halls via computer vision
 
+Next up as of 08/20/18
+- automate image collection based on dining hall open hours
+- add stream capability to `get_cams` module
+
+
 ## Data 
 UCSB has recently released a series of APIs, [one of which](https://developer.ucsb.edu/apis/dining/dining-cams-v1) provides feeds from [cameras at Carrillo, DLG, and Ortega dining halls](http://www.housing.ucsb.edu/dining/dining-cams).
 
@@ -15,9 +20,6 @@ DLG:
 Ortega:  
 ![](img/ortega_sample.jpg)
 
-## Next up
-- automate image collection based on dining hall open hours
-- add stream capability to `get_cams` module
 
 ## Requirements
 ### Data retrieval module
