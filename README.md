@@ -5,6 +5,7 @@ Determining wait times at UCSB dining halls via computer vision
 ## Changelog
 Next up
 - automate image collection based on dining hall open hours
+    + start collecting images 5 minutes before dining hall opens
 - add stream capability to `dining_hall_cams` module
 
 08/20/18
