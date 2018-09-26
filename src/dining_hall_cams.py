@@ -11,6 +11,7 @@ cases_days_map = {
     'weekend': [6, 7],
     'latenite': [1, 2, 3, 4]
 }
+dining_halls = ["carrillo", "de-la-guerra", "ortega"]
 
 
 def get_still(dining_hall):
@@ -18,7 +19,7 @@ def get_still(dining_hall):
     gets still image from UCSB dining cam API
 
     INPUT
-        dining_hall string, name of dining hall ["carrillo", "de-la-guerra", or "ortega"]
+        dining_hall string, name of dining hall
 
     OUTPUT
         image       PIL JpegImageFile
@@ -35,7 +36,7 @@ def save_still(dining_hall, save_path):
     saves still image from UCSB dining cam API to specified location
 
     INPUT
-        dining_hall string, name of dining hall ["carrillo", "de-la-guerra", or "ortega"]
+        dining_hall string, name of dining hall
     OUTPUT
         success     boolean, True if still image was successfully saved, False o.w.
     '''
@@ -54,7 +55,7 @@ def dining_hall_open(dining_hall, now=None):
     checks whether or not a dining hall is open
 
     INPUT
-        dining_hall     string, name of dining hall ["carrillo", "de-la-guerra", or "ortega"]
+        dining_hall     string, name of dining hall
         now (optional)  datetime, time to check for dining hall availability, current time by default
 
     OUTPUT
@@ -64,14 +65,15 @@ def dining_hall_open(dining_hall, now=None):
         now = datetime.today()
     day = now.isoweekday()
     relevant_hours = dining_hall_hours.loc[(dining_hall_hours['dining_hall'] == dining_hall) & (dining_hall_hours['day'] == day)]
-    open_hours_list = list(relevant_hours.apply(lambda x: (x['start'], x['end']), axis=1))
     is_open = False
-    for (start, end) in open_hours_list:
-        start_time = datetime.strptime(start, '%I:%M:%S %p').time()
-        end_time = datetime.strptime(end, '%I:%M:%S %p').time()
-        if _time_in_range(start_time, end_time, now.time()):
-            is_open = True
-            break
+    if len(relevant_hours) > 0:
+        open_hours_list = list(relevant_hours.apply(lambda x: (x['start'], x['end']), axis=1))
+        for (start, end) in open_hours_list:
+            start_time = datetime.strptime(start, '%I:%M:%S %p').time()
+            end_time = datetime.strptime(end, '%I:%M:%S %p').time()
+            if _time_in_range(start_time, end_time, now.time()):
+                is_open = True
+                break
     return is_open
 
 
